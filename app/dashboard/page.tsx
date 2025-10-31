@@ -3,14 +3,14 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Laugh, BinaryIcon, Newspaper, Terminal, ArrowLeft, UserSearchIcon } from "lucide-react"
+import { Laugh, Binary, Newspaper, Terminal, ArrowLeft, UserSearch } from "lucide-react"
 import { Footer } from "@/components/footer"
 
 const dashboardItems = [
   {
     title: "Projects",
     description: "Personal work in tech",
-    icon: BinaryIcon,
+    icon: Binary,
     href: "/projets",
     color: "from-blue-400 to-cyan-500",
   },
@@ -31,7 +31,7 @@ const dashboardItems = [
   {
     title: "Contact",
     description: "Contact information",
-    icon: UserSearchIcon,
+    icon: UserSearch,
     href: "/contact",
     color: "from-yellow-400 to-orange-500",
   },
