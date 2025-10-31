@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
-import { ThemeToggle } from "@/components/ThemeToggle"
+import ThemeToggle from "@/components/ThemeToggle"
 
 // Google fonts (kept)
 import { Fira_Code, VT323 } from "next/font/google"
@@ -27,30 +27,26 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // No-flash of incorrect theme on first paint
+  // Prevent theme flash: default = light; apply dark only if saved === "dark"
   const noFlashScript = `
     try {
-      const saved = localStorage.getItem("theme");
-      const isLight = saved === "light";
-      document.documentElement.classList.toggle("light", isLight);
+      var saved = localStorage.getItem("theme");
+      var isDark = saved === "dark";
+      document.documentElement.classList.toggle("dark", isDark);
     } catch {}
   `
 
   return (
-    <html
-      lang="en"
-      className={`${firaCode.variable} ${vt323.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={`${firaCode.variable} ${vt323.variable}`} suppressHydrationWarning>
       <head>
-        {/* Ensure browser renders both color schemes correctly */}
-        <meta name="color-scheme" content="dark light" />
+        <meta name="color-scheme" content="light dark" />
         <script dangerouslySetInnerHTML={{ __html: noFlashScript }} />
       </head>
-      <body className="min-h-screen bg-background text-foreground font-mono antialiased scan-lines">
+      <body className="min-h-screen bg-background text-foreground font-mono antialiased">
         <ThemeToggle />
         {children}
       </body>
     </html>
   )
 }
+

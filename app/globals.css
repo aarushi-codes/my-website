@@ -3,10 +3,30 @@
 @tailwind utilities;
 
 @layer base {
-  :root { /* DARK (default: terminal) */
-    --scan-size: 8px;        /* distance between lines */
-    --scan-line: 1px;        /* line thickness */
-    --scan-opacity: 0.06; 
+  :root { /* LIGHT is default */
+    --background: 330 60% 96%;          /* very light pink */
+    --foreground: 330 30% 25%;          /* mauve text */
+    --card: 330 60% 98%;
+    --card-foreground: 330 30% 25%;
+    --popover: 330 60% 98%;
+    --popover-foreground: 330 30% 25%;
+    --primary: 330 30% 30%;             /* mauve for accents */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 25% 92%;
+    --secondary-foreground: 330 30% 25%;
+    --muted: 330 20% 90%;
+    --muted-foreground: 330 20% 40%;
+    --accent: 330 30% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 330 20% 80%;
+    --input: 330 20% 80%;
+    --ring: 330 30% 30%;
+    --radius: 0.5rem;
+  }
+
+  .dark { /* terminal dark */
     --background: 10 10% 4%;
     --foreground: 120 100% 85%;
     --card: 10 10% 6%;
@@ -26,34 +46,9 @@
     --border: 10 10% 15%;
     --input: 10 10% 15%;
     --ring: 120 100% 55%;
-    --radius: 0.5rem;
-  }
-
-  /* LIGHT (toggle adds .light on <html>) — very light pink bg, mauve text */
-  .light {
-    --scan-size: 10px;
-    --scan-opacity: 0.035;
-    --background: 340 100% 97%;        /* very light pink */
-    --foreground: 320 30% 20%;         /* mauve/dusty rose */
-    --card: 340 100% 99%;
-    --card-foreground: 320 30% 20%;
-    --popover: 340 100% 99%;
-    --popover-foreground: 320 30% 20%;
-    --primary: 320 45% 35%;            /* mauve */
-    --primary-foreground: 340 100% 98%;
-    --secondary: 340 45% 92%;
-    --secondary-foreground: 320 35% 25%;
-    --muted: 340 45% 94%;
-    --muted-foreground: 320 25% 35%;
-    --accent: 320 45% 35%;             /* glow color */
-    --accent-foreground: 340 100% 98%;
-    --destructive: 0 72% 45%;
-    --destructive-foreground: 340 100% 98%;
-    --border: 340 30% 86%;
-    --input: 340 30% 86%;
-    --ring: 320 45% 35%;
   }
 }
+
 
 @layer base {
   * { @apply border-border; }
