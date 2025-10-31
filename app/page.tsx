@@ -134,7 +134,7 @@ export default function HomePage() {
 
         {/* DVD bounce image */}
         <img
-          src="/meme.png"
+          src="/cat.png"
           alt=""
           className="fixed w-[30px] h-[30px] cursor-pointer z-50 transition-none"
           style={{ left: `${position.x}px`, top: `${position.y}px`, imageRendering: "pixelated" }}
@@ -152,7 +152,7 @@ export default function HomePage() {
                 autoPlay
                 onClick={(e) => e.stopPropagation()}
               >
-                <source src="media.mp4" type="video/mp4" />
+                <source src="rickroll.mp4" type="video/mp4" />
                 Video is not supported on your device.
               </video>
 
