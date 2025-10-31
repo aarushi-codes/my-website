@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 export default function TableauSynthese() {
   const handleDownload = () => {
     const link = document.createElement("a")
-    link.href = "/Aarushi-Alreja.pdf"
+    link.href = "/aarushi_alreja.pdf"
     link.download = "Aarushi_Alreja_Resume.pdf"
     document.body.appendChild(link)
     link.click()
